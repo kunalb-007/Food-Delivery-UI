@@ -22,7 +22,7 @@ import { useStateValue } from "./Components/StateProvider";
 
 function App() {
   const [isMainData, setMainData] = useState(
-    Items.filter((element) => element.itemId == "buger01")
+    Items.filter((element) => element.itemId === "buger01")
   );
 
   const [{ cart, total }, dispatch] = useStateValue();
@@ -52,7 +52,7 @@ function App() {
   }, [isMainData, cart, total, totalPrice]);
 
   const setData = (itemId) => {
-    setMainData(Items.filter((element) => element.itemId == itemId));
+    setMainData(Items.filter((element) => element.itemId === itemId));
   };
 
   return (
@@ -102,7 +102,7 @@ function App() {
                     <MenuCard
                       imgSrc={data.imgSrc}
                       name={data.name}
-                      isActive={data.id == "1" ? true : false}
+                      isActive={data.id === "1" ? true : false}
                     />
                   </div>
                 ))}
